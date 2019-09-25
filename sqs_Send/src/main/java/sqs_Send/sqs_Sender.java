@@ -12,12 +12,11 @@ import com.amazonaws.services.sqs.model.SendMessageRequest;
 public class sqs_Sender {
     public static void send(String qURL) {
         final AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
-
-        String queueUrl = qURL;
-        SendMessageRequest send_msg_request = new SendMessageRequest()
-                .withQueueUrl(queueUrl)
-                .withMessageBody("Test Send from JAVA")
-                .withDelaySeconds(5);
-        sqs.sendMessage(send_msg_request);
+            String queueUrl = qURL;
+            SendMessageRequest send_msg_request = new SendMessageRequest()
+                    .withQueueUrl(queueUrl)
+                    .withMessageBody("Test Send from JAVA")
+                    .withDelaySeconds(1);
+            sqs.sendMessage(send_msg_request);
     }
 }
